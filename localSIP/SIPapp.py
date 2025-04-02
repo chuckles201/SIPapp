@@ -9,7 +9,9 @@ pygame.mixer.init()
 '''Simple SIP Application
 
 Get's request, send TRYING, RINGING, and OK response
-via SIP
+via SIP.
+
+*NOTE, this only works on MAC
 '''
 
 # Message creation
@@ -18,7 +20,19 @@ Specifies that call has been received.
 
 Get info from INVITE:
 '''
-local_ip = '10.136.118.145'
+
+def get_loc_ip():
+    ifcon = subprocess.run('ifconfig',text=True,capture_output=True).stdout
+    # go through each text-part 
+    for i in range(len(ifcon)-8):
+        if ifcon[i:i+8] == "inet 10.":
+            return str(ifcon[i+5:i+30].split(' ')[0])
+
+print(get_loc_ip())
+local_ip = get_loc_ip()
+
+
+
 def create_trying_response(invite):
     lines = invite.splitlines()
 
