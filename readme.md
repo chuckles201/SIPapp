@@ -1,4 +1,4 @@
-This is a *work in progress attempt* to make a simple VOIP (voice over IP) application that allows for ease-of-use and control on the packet-level of SIP requests.
+Here, i will be making a simple VOIP application that allows for simplicity, understanding, and packet-level control.
 
 The key parts are:
 - ```SIP (session inition protocol)```: standard protocol to iniatiate/end a call
@@ -6,8 +6,5 @@ The key parts are:
 - simple GUI that allows for easy manipulation of SIP
 
 ## [Local SIP](localSIP/SIPapp.py)
-I am currently trying to understand the basics of the SIP protocol, and reverse-engineer it to be able to answer, and hang up a call.
+Creating an SIP server/client to initate callse
 
-![call flow](localSIP/callflow.png)
-
-here is the basic structure of a call that must be re-implemented.
